@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEET THE DEVELOPERS"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="24sp"/>
+
+    <ImageView
+        android:layout_width="161dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="20dp"
+        android:src="@drawable/mypicc" />
+
+    <TextView
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="50dp"
+        android:text="German Oliver E. Velasco IV
+        BSIT Student"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="50dp"
+        android:text="I’m an Information Technology student passionate about building user-friendly applications."
+        android:textSize="15sp" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="12dp"
+        android:src="@drawable/picc" />
+
+    <TextView
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="50dp"
+        android:text="Niña Nicole S. Villadarez
+        BSIT Student"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="50dp"
+        android:text="I’m an Information Technology student with a focus on problem-solving and continuous learning in the world of software development."
+        android:textSize="15sp"
+        android:paddingBottom="5dp"/>
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="#F96D00"
+        android:text="Home"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
