@@ -39,7 +39,6 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
-            android:fontFamily="@font/inter"
             android:textStyle="bold" />
 
         <EditText

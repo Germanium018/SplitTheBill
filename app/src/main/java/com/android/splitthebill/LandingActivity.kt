@@ -16,10 +16,24 @@ class LandingActivity : Activity() {
         setContentView(R.layout.landing)
 
         val imgSettings = findViewById<ImageView>(R.id.imageview_settings)
+        val imgProfile = findViewById<ImageView>(R.id.imageview_profile)
 
         imgSettings.setOnClickListener{
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
+            finish()
         }
+
+        imgProfile.setOnClickListener {
+            try {
+                val intent = Intent(this, ProfilePage::class.java)
+                startActivity(intent)
+                finish()
+            } catch (e: ClassNotFoundException) {
+                Toast.makeText(this, "Profile page is not available.", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
+
     }
 }

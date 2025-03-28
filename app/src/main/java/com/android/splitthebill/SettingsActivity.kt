@@ -2,6 +2,7 @@ package com.android.splitthebill
 
 import android.app.Activity
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -13,9 +14,10 @@ class SettingsActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings)
 
-        val aboutDevelopers = findViewById<TextView>(R.id.textview_aboutdevs)
+        val aboutDevelopers = findViewById<ImageView>(R.id.imgAboutDevs)
         val backToProfile = findViewById<ImageView>(R.id.imageview_backbutton)
         val logout = findViewById<Button>(R.id.button_logout)
+        val editProfile = findViewById<ImageView>(R.id.imgEditProfile)
 
         backToProfile.setOnClickListener {
             val intent = Intent(this, LandingActivity::class.java)
@@ -23,9 +25,15 @@ class SettingsActivity : Activity() {
             finish()
         }
 
+        editProfile.setOnClickListener {
+            val intent = Intent(this, ProfilePage::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         aboutDevelopers.setOnClickListener {
             try {
-                val intent = Intent(this, Class.forName("com.android.splitthebill.DeveloperPage"))
+                val intent = Intent(this, DeveloperPage::class.java)
                 startActivity(intent)
                 finish()
             } catch (e: ClassNotFoundException) {
@@ -35,7 +43,7 @@ class SettingsActivity : Activity() {
 
         logout.setOnClickListener {
             try {
-                val intent = Intent(this, Class.forName("com.android.splitthebill.LogoutPage"))
+                val intent = Intent(this, LogoutPage::class.java)
                 startActivity(intent)
                 finish()
             } catch (e: ClassNotFoundException) {

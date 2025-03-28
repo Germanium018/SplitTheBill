@@ -43,7 +43,6 @@
             android:text="German Oliver E. Velasco IV"
             android:textStyle="italic"
             android:textSize="20sp"
-            android:paintFlags="underline"
             android:background="#d8d8d8"
             android:padding="8dp" />
 
@@ -71,7 +70,6 @@
             android:text="German Velasco IV"
             android:textStyle="italic"
             android:textSize="20sp"
-            android:paintFlags="underline"
             android:background="#d8d8d8"
             android:padding="8dp" />
 
@@ -99,7 +97,6 @@
             android:text="**********"
             android:textStyle="italic"
             android:textSize="20sp"
-            android:paintFlags="underline"
             android:background="#d8d8d8"
             android:padding="8dp" />
 
@@ -127,7 +124,6 @@
             android:text="germanoliver.velasco@cit.edu"
             android:textStyle="italic"
             android:textSize="20sp"
-            android:paintFlags="underline"
             android:background="#d8d8d8"
             android:padding="8dp" />
 
@@ -155,7 +151,6 @@
             android:text="0956 1477 853"
             android:textStyle="italic"
             android:textSize="20sp"
-            android:paintFlags="underline"
             android:background="#d8d8d8"
             android:padding="8dp" />
 

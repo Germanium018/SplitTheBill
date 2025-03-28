@@ -20,7 +20,7 @@ class LogoutPage : Activity() {
         button_logout.setOnClickListener {
             Log.e("Exit App", "Exiting App")
             Toast.makeText(this, "Button is clicked!", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, LoginPage::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

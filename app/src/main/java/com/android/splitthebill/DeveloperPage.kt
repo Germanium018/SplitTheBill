@@ -21,7 +21,7 @@ class DeveloperPage : Activity() {
         btnHome.setOnClickListener {
             Log.e("Exit App", "Exiting App")
             Toast.makeText(this, "Button is clicked!", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, LoginPage::class.java)
+            val intent = Intent(this, LandingActivity::class.java)
             startActivity(intent)
         }
     }

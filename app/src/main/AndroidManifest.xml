@@ -13,14 +13,8 @@
         android:theme="@style/Theme.SplitTheBill"
         tools:targetApi="31">
         <activity
-            android:name=".LoginPage"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".LandingActivity"
+            android:exported="false"/>
         <activity
             android:name=".ProfilePage"
             android:exported="false" />
@@ -28,14 +22,16 @@
             android:name=".DeveloperPage"
             android:exported="false" />
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".LogoutPage"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -67,6 +67,7 @@
                 android:textColor="#F2F2F2"
                 android:paddingStart="4dp"/>
             <ImageView
+                android:id="@+id/imgEditProfile"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/next"
@@ -186,6 +187,7 @@
                 android:paddingStart="4dp"/>
 
             <ImageView
+                android:id="@+id/imgAboutDevs"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/next"
