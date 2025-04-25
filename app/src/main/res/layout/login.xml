@@ -6,38 +6,36 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F2"
+    android:background="#FFFFFF"
     android:padding="40dp"
     tools:context=".LoginActivity">
 
-    <ImageView
+     <!-- <ImageView
         android:layout_marginTop="20dp"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:src="@drawable/app_icon"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"/> -->
 
     <!-- Login -->
     <LinearLayout
         android:layout_width="320dp"
-        android:layout_height="435dp"
+        android:layout_height="485dp"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/rounded_rectangle"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_marginTop="20dp">
+        android:padding = "30dp"
+        android:layout_marginTop="100dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
-            android:textSize="25sp"
+            android:text="Login"
+            android:fontFamily="@font/bold"
+            android:textSize="24sp"
             android:textColor="#F2F2F2"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
             android:layout_gravity="center"
             android:textStyle="bold" />
 
@@ -45,24 +43,27 @@
             android:id="@+id/edittext_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#222831"
-            android:textSize="16sp"
-            android:textColor="#F2F2F2"
-            android:textColorHint="#F2F2F2"
-            android:paddingTop="20dp"
-            android:paddingBottom="18dp"
-            android:hint="Enter username" />
+            android:hint="Enter username"
+            android:fontFamily="@font/inter"
+            android:textSize="14sp"
+            android:background="@drawable/round_style"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:paddingLeft="14dp"
+            android:layout_marginBottom="15dp" />
 
         <EditText
             android:id="@+id/edittext_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#F2F2F2"
-            android:textColor="#F2F2F2"
-            android:textSize="16sp"
+            android:hint="Enter password"
+            android:fontFamily="@font/inter"
+            android:textSize="14sp"
             android:inputType="textPassword"
-            android:paddingBottom="18dp"
-            android:hint="Enter password" />
+            android:background="@drawable/round_style"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:paddingLeft="14dp"/>
 
         <!-- Forgot Password -->
         <TextView
@@ -70,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forgot password?"
+            android:fontFamily="@font/inter"
             android:textColor="#F2F2F2"
             android:textSize="12sp"
             android:paddingTop="10dp"
@@ -82,11 +84,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:background="@drawable/round_style"
-            android:backgroundTint="#222831"
+            android:fontFamily="@font/bold"
+            android:background="@drawable/rounded_button"
             android:textColor="#F2F2F2"
             android:textAllCaps="false"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginVertical="10dp"
             android:layout_marginBottom="15dp" />
@@ -95,7 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Or login with"
-            android:textSize="13sp"
+            android:fontFamily="@font/inter"
+            android:textSize="14sp"
             android:textColor="#F2F2F2"
             android:layout_marginTop="1dp"
             android:layout_marginBottom="15dp"
@@ -127,8 +130,9 @@
             android:id="@+id/textview_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
             android:text="Don't have an account? Sign up"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:textColor="#F2F2F2"
             android:layout_marginTop="38dp"
             android:layout_gravity="center" />

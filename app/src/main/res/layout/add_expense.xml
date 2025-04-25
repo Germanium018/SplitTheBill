@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_expense_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:background="#FFFFFF"
+    tools:context=".AddExpenseActivity">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/imageview_backbutton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/back"
+        android:paddingStart="5dp"/>
+
+    <TextView
+        android:id="@+id/textview_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@id/imageview_backbutton"
+        android:fontFamily="@font/inter"
+        android:paddingStart="255dp"
+        android:text="Save"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="30dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Expense"
+            android:layout_gravity="center"
+            android:fontFamily="@font/bold"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/edittext_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:background="@drawable/round_style"
+            android:padding="14dp"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/textview_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:hint="Select Date"
+            android:textSize="14sp"
+            android:background="@drawable/round_style"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/edittext_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Amount"
+            android:textSize="14sp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/round_style"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/edittext_numberOfPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Number of people"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:background="@drawable/round_style"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Split Options"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:fontFamily="@font/bold"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:padding="15dp" />
+    </LinearLayout>
+
+</RelativeLayout>
+

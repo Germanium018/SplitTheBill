@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="15dp"
+        android:paddingEnd="25dp"
+        android:paddingStart="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical">
+
+        <!-- Date and Name of Restaurant  -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/textview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Starbucks"
+                android:fontFamily="@font/inter"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14 February, 2025"
+                android:fontFamily="@font/inter"
+                android:textSize="12sp"
+                android:textColor="#DDDDDD"/>
+        </LinearLayout>
+
+        <!-- Total Amount -->
+        <TextView
+            android:id="@+id/textview_totalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Php 320.00"
+            android:textSize="14sp"
+            android:fontFamily="@font/inter"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 
@@ -17,6 +18,7 @@ class LoginActivity : Activity() {
         val etUsername = findViewById<EditText>(R.id.edittext_username)
         val etPassword = findViewById<EditText>(R.id.edittext_password)
         val buttonLogin = findViewById<Button>(R.id.button_login)
+        val tvSignup = findViewById<TextView>(R.id.textview_signup)
 
         buttonLogin.setOnClickListener {
             val username = etUsername.text.toString().trim()
@@ -27,6 +29,12 @@ class LoginActivity : Activity() {
                 val intent = Intent(this, LandingActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        tvSignup.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
