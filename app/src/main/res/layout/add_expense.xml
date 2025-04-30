@@ -53,7 +53,6 @@
             android:background="@drawable/round_style"
             android:padding="14dp"
             android:textSize="14sp"
-            android:textColor="#FFFFFF"
             android:textColorHint="#AAAAAA"
             android:layout_marginBottom="16dp" />
 
@@ -65,7 +64,6 @@
             android:hint="Select Date"
             android:textSize="14sp"
             android:background="@drawable/round_style"
-            android:textColor="#FFFFFF"
             android:textColorHint="#AAAAAA"
             android:layout_marginBottom="16dp" />
 
@@ -78,7 +76,6 @@
             android:inputType="numberDecimal"
             android:background="@drawable/round_style"
             android:padding="14dp"
-            android:textColor="#FFFFFF"
             android:textColorHint="#AAAAAA"
             android:layout_marginBottom="24dp" />
 
@@ -91,7 +88,6 @@
             android:inputType="number"
             android:background="@drawable/round_style"
             android:padding="14dp"
-            android:textColor="#FFFFFF"
             android:textColorHint="#AAAAAA"
             android:layout_marginBottom="24dp" />
 

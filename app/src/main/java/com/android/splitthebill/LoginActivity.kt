@@ -3,12 +3,12 @@ package com.android.splitthebill
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
-
+import com.android.splitthebill.app.MyApp
+import com.android.splitthebill.util.isValid
+import com.android.splitthebill.util.toast
 
 class LoginActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,40 +23,26 @@ class LoginActivity : Activity() {
         buttonLogin.setOnClickListener {
             val username = etUsername.text.toString().trim()
             val password = etPassword.text.toString().trim()
-            Log.e("Login Activity", "Button is clicked!")
-            if (validateInput(username, password)) {
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, LandingActivity::class.java)
-                startActivity(intent)
+
+            if (etUsername.isValid() || etPassword.isValid()) {
+                toast("Fill out the details completely!")
+                return@setOnClickListener
+            }
+
+            val app = application as MyApp
+            if (app.isValidUser(username, password)) {
+                toast("Login successfully!")
+                startActivity(Intent(this, LandingActivity::class.java))
+                finish()
+            } else {
+                toast("Incorrect username or password!")
             }
         }
 
         tvSignup.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
     }
-
-    private fun validateInput(username: String, password: String): Boolean {
-        return when {
-            username.isEmpty() -> {
-                Toast.makeText(this, "Username cannot be empty", Toast.LENGTH_SHORT).show()
-                false
-            }
-            username.length < 4 -> {
-                Toast.makeText(this, "Username must be at least 4 characters", Toast.LENGTH_SHORT).show()
-                false
-            }
-            password.isEmpty() -> {
-                Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show()
-                false
-            }
-            password.length < 8 -> {
-                Toast.makeText(this, "Password must be at least 8 characters", Toast.LENGTH_SHORT).show()
-                false
-            }
-            else -> true
-        }
-    }
 }
+

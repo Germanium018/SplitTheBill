@@ -1,34 +1,38 @@
 package com.android.splitthebill
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
+import com.android.splitthebill.model.BillingItem
 
-class BillingAdapter(private val billingList: MutableList<BillingItem>) :
-    RecyclerView.Adapter<BillingAdapter.BillingViewHolder>() {
+class BillingListAdapter(
+    private val context: Context,
+    private val billingList: MutableList<BillingItem>
+) : BaseAdapter() {
 
-    class BillingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.textview_title)
-        val date: TextView = itemView.findViewById(R.id.date)
-        val amount: TextView = itemView.findViewById(R.id.textview_totalAmount)
-    }
+    override fun getCount(): Int = billingList.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BillingViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_billing, parent, false)
-        return BillingViewHolder(view)
-    }
+    override fun getItem(position: Int): Any = billingList[position]
 
-    override fun onBindViewHolder(holder: BillingViewHolder, position: Int) {
+    override fun getItemId(position: Int): Long = position.toLong()
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val item = billingList[position]
-        holder.title.text = item.title
-        holder.date.text = item.date
-        holder.amount.text = "Php ${"%.2f".format(item.amount)}"
-    }
+        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_billing, parent, false)
 
-    override fun getItemCount(): Int = billingList.size
+        val title = view.findViewById<TextView>(R.id.textview_title)
+        val date = view.findViewById<TextView>(R.id.date)
+        val amount = view.findViewById<TextView>(R.id.textview_totalAmount)
+
+        title.text = item.title
+        date.text = item.date
+        amount.text = "Php %.2f".format(item.amount)
+
+        return view
+    }
 
     fun updateData(newItems: List<BillingItem>) {
         billingList.clear()
@@ -36,4 +40,3 @@ class BillingAdapter(private val billingList: MutableList<BillingItem>) :
         notifyDataSetChanged()
     }
 }
-

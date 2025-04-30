@@ -31,7 +31,7 @@
             android:layout_gravity="left" />
 
         <EditText
-            android:id="@+id/edittext_username"
+            android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter username"
@@ -44,7 +44,7 @@
             android:layout_marginBottom="15dp" />
 
         <EditText
-            android:id="@+id/edittext_p1assword"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter password"
@@ -58,7 +58,7 @@
             android:layout_marginBottom="15dp"/>
 
         <EditText
-            android:id="@+id/edittext_confirm"
+            android:id="@+id/et_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Confirm password"
@@ -73,7 +73,7 @@
 
         <!-- Sign up Button -->
         <Button
-            android:id="@+id/button_login"
+            android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign up"
@@ -88,7 +88,7 @@
 
         <!-- Sign up -->
         <TextView
-            android:id="@+id/textview_signup"
+            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Already have an account? Log in"

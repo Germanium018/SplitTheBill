@@ -64,7 +64,7 @@
 
             <!-- Total Balance Display -->
             <LinearLayout
-                android:id="@+id/textview_balance"
+                android:id="@+id/textview_card"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:orientation="vertical"
@@ -75,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Your Balance"
+                    android:text="Welcome to"
                     android:fontFamily="@font/inter"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
@@ -85,7 +85,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Php 1,023.51"
+                    android:text="Split the Bill!"
                     android:fontFamily="@font/bold"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
@@ -118,12 +118,12 @@
             </LinearLayout>
 
             <!-- Recent Billings -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewBilling"
+            <ListView
+                android:id="@+id/listViewBilling"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginTop="8dp"/>
+                android:layout_height="wrap_content"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp"/>
         </LinearLayout>
 
     <!-- Navigation Bar -->

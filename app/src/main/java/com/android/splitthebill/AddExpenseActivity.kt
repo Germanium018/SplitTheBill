@@ -2,9 +2,10 @@ package com.android.splitthebill
 
 import android.app.Activity
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
+import com.android.splitthebill.app.MyApp
+import com.android.splitthebill.model.BillingItem
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,6 +18,7 @@ class AddExpenseActivity : Activity() {
     private lateinit var amountInput: EditText
     private lateinit var numberOfPeopleInput: EditText
     private lateinit var splitButton: Button
+    private lateinit var adapter: BillingListAdapter
 
     private val calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("dd MMMM, yyyy", Locale.getDefault())
@@ -53,7 +55,7 @@ class AddExpenseActivity : Activity() {
             ).show()
         }
 
-        // Save button (same action as Split Options for now)
+        // Save button
         saveText.setOnClickListener {
             handleSubmit()
         }
@@ -89,7 +91,7 @@ class AddExpenseActivity : Activity() {
             amount = amount
         )
 
-        MyApp.instance.addBillingItem(newExpense)
+        (application as MyApp).addBillingItem(newExpense)
         finish()
     }
 }
