@@ -1,24 +1,30 @@
 package com.android.splitthebill
 
+import com.android.splitthebill.SplitEqualActivity
 import android.app.Activity
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import com.android.splitthebill.app.MyApp
 import com.android.splitthebill.model.BillingItem
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Locale
 
 class AddExpenseActivity : Activity() {
 
     private lateinit var backButton: ImageView
-    private lateinit var saveText: TextView
-    private lateinit var titleInput: EditText
+    private lateinit var saveTextView: TextView
+    private lateinit var titleEditText: EditText
     private lateinit var dateText: TextView
-    private lateinit var amountInput: EditText
-    private lateinit var numberOfPeopleInput: EditText
-    private lateinit var splitButton: Button
-    private lateinit var adapter: BillingListAdapter
+    private lateinit var amountEditText: EditText
+    private lateinit var numberOfPeopleEditText: EditText
+    private lateinit var splitOptionsButton: Button
 
     private val calendar = Calendar.getInstance()
     private val dateFormat = SimpleDateFormat("dd MMMM, yyyy", Locale.getDefault())
@@ -27,21 +33,22 @@ class AddExpenseActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_expense)
 
-        // Initialize views
         backButton = findViewById(R.id.imageview_backbutton)
-        saveText = findViewById(R.id.textview_save)
-        titleInput = findViewById(R.id.edittext_title)
+        saveTextView = findViewById(R.id.textview_save)
+        titleEditText = findViewById(R.id.edittext_title)
         dateText = findViewById(R.id.textview_date)
-        amountInput = findViewById(R.id.edittext_amount)
-        numberOfPeopleInput = findViewById(R.id.edittext_numberOfPeople)
-        splitButton = findViewById(R.id.button_submit)
+        amountEditText = findViewById(R.id.edittext_amount)
+        numberOfPeopleEditText = findViewById(R.id.edittext_numberOfPeople)
+        splitOptionsButton = findViewById(R.id.button_submit)
 
-        // Back button behavior
         backButton.setOnClickListener {
             finish()
         }
 
-        // Date picker
+        saveTextView.setOnClickListener {
+            finish()
+        }
+
         dateText.setOnClickListener {
             DatePickerDialog(
                 this,
@@ -55,44 +62,47 @@ class AddExpenseActivity : Activity() {
             ).show()
         }
 
-        // Save button
-        saveText.setOnClickListener {
-            handleSubmit()
-        }
+        splitOptionsButton.setOnClickListener {
+            val title = titleEditText.text.toString().trim()
+            val date = dateText.text.toString().trim()
+            val amountStr = amountEditText.text.toString().trim()
+            val numberStr = numberOfPeopleEditText.text.toString().trim()
 
-        // Split button
-        splitButton.setOnClickListener {
-            handleSubmit()
+            if (title.isEmpty() || date.isEmpty() || amountStr.isEmpty() || numberStr.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val amount = amountStr.toDoubleOrNull()
+            val numberOfPeople = numberStr.toIntOrNull()
+
+            if (amount == null || numberOfPeople == null || numberOfPeople <= 0) {
+                Toast.makeText(this, "Enter valid numbers", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val newExpense = BillingItem(
+                title = title,
+                date = date,
+                amount = amount
+            )
+
+            (application as MyApp).addBillingItem(newExpense)
+
+            val intent = Intent(this, SplitEqualActivity::class.java)
+            intent.putExtra("expenseTitle", title)
+            intent.putExtra("expenseDate", date)
+            intent.putExtra("expenseAmount", amount)
+            intent.putExtra("numberOfPeople", numberOfPeople)
+            startActivityForResult(intent, 456)
         }
     }
 
-    private fun handleSubmit() {
-        val title = titleInput.text.toString().trim()
-        val date = dateText.text.toString().trim()
-        val amountStr = amountInput.text.toString().trim()
-        val numberStr = numberOfPeopleInput.text.toString().trim()
-
-        if (title.isEmpty() || date.isEmpty() || amountStr.isEmpty() || numberStr.isEmpty()) {
-            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            return
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 456 && resultCode == RESULT_OK) {
+            finish()
         }
-
-        val amount = amountStr.toDoubleOrNull()
-        val numberOfPeople = numberStr.toIntOrNull()
-
-        if (amount == null || numberOfPeople == null || numberOfPeople <= 0) {
-            Toast.makeText(this, "Enter valid numbers", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val newExpense = BillingItem(
-            title = title,
-            date = date,
-            amount = amount
-        )
-
-        (application as MyApp).addBillingItem(newExpense)
-        finish()
     }
 }
 

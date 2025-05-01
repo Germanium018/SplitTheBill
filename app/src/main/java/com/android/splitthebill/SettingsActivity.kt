@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.android.splitthebill.util.toast
 
 class SettingsActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,34 +21,38 @@ class SettingsActivity : Activity() {
         val editProfile = findViewById<ImageView>(R.id.imgEditProfile)
 
         backToProfile.setOnClickListener {
-            val intent = Intent(this, LandingActivity::class.java)
-            startActivity(intent)
-            finish()
+            try{
+                startActivity(Intent(this, LandingActivity::class.java))
+                finish()
+            } catch (e: ClassNotFoundException) {
+                toast("Landing page is not available.")
+            }
         }
 
         editProfile.setOnClickListener {
-            val intent = Intent(this, ProfilePage::class.java)
-            startActivity(intent)
-            finish()
+            try{
+                startActivity(Intent(this, ProfilePage::class.java))
+                finish()
+            } catch (e: ClassNotFoundException){
+                toast("Profile page is not available.")
+            }
         }
 
         aboutDevelopers.setOnClickListener {
             try {
-                val intent = Intent(this, DeveloperPage::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, DeveloperPage::class.java))
                 finish()
             } catch (e: ClassNotFoundException) {
-                Toast.makeText(this, "Developer page is not available.", Toast.LENGTH_SHORT).show()
+                toast("Developer page is not available.")
             }
         }
 
         logout.setOnClickListener {
             try {
-                val intent = Intent(this, LogoutPage::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, LogoutPage::class.java))
                 finish()
             } catch (e: ClassNotFoundException) {
-                Toast.makeText(this, "Logout page is not available.", Toast.LENGTH_SHORT).show()
+                toast("Logout page is not available.")
             }
         }
     }

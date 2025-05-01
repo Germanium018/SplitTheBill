@@ -31,6 +31,13 @@ class MyApp : Application() {
         return billingList
     }
 
+    fun updateBillingItem(updatedItem: BillingItem) {
+        val index = billingList.indexOfFirst { it.title == updatedItem.title && it.date == updatedItem.date }
+        if (index != -1) {
+            billingList[index] = updatedItem
+        }
+    }
+
     fun addUser(username: String, password: String) {
         prefs.edit()
             .putString("username", username)

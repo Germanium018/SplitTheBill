@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.android.splitthebill.model.BillingItem
 
-class BillingListAdapter(
+class BillingAdapter(
     private val context: Context,
     private val billingList: MutableList<BillingItem>
 ) : BaseAdapter() {
@@ -25,11 +25,11 @@ class BillingListAdapter(
 
         val title = view.findViewById<TextView>(R.id.textview_title)
         val date = view.findViewById<TextView>(R.id.date)
-        val amount = view.findViewById<TextView>(R.id.textview_totalAmount)
+        val amountPerPersonTextView = view.findViewById<TextView>(R.id.textview_amountPerPerson)
 
         title.text = item.title
         date.text = item.date
-        amount.text = "Php %.2f".format(item.amount)
+        amountPerPersonTextView.text = "Php ${item.amountPerPerson}"
 
         return view
     }
