@@ -92,6 +92,7 @@
                 android:layout_marginStart="8dp"
                 android:src="@drawable/next"/>
         </LinearLayout>
+
     </LinearLayout>
 
     <Button

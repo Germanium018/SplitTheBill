@@ -17,6 +17,7 @@ class SettingsActivity : Activity() {
 
         val aboutDevelopers = findViewById<ImageView>(R.id.imgAboutDevs)
         val backToProfile = findViewById<ImageView>(R.id.imageview_backbutton)
+        val notes = findViewById<TextView>(R.id.textview_notes)
         val logout = findViewById<Button>(R.id.button_logout)
         val editProfile = findViewById<ImageView>(R.id.imgEditProfile)
 
@@ -38,12 +39,22 @@ class SettingsActivity : Activity() {
             }
         }
 
+
+        /* notes.setOnClickListener {
+            try{
+                startActivity(Intent(this, AddNotes::class.java))
+                finish()
+            } catch (e: ClassNotFoundException){
+                toast("Notes page is not available.")
+            }
+        } */
+
         aboutDevelopers.setOnClickListener {
             try {
                 startActivity(Intent(this, DeveloperPage::class.java))
                 finish()
             } catch (e: ClassNotFoundException) {
-                toast("Developer page is not available.")
+                toast("Developers page is not available.")
             }
         }
 
