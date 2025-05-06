@@ -17,7 +17,7 @@ class SettingsActivity : Activity() {
 
         val aboutDevelopers = findViewById<ImageView>(R.id.imgAboutDevs)
         val backToProfile = findViewById<ImageView>(R.id.imageview_backbutton)
-        val notes = findViewById<TextView>(R.id.textview_notes)
+        //val notes = findViewById<TextView>(R.id.textview_notes)
         val logout = findViewById<Button>(R.id.button_logout)
         val editProfile = findViewById<ImageView>(R.id.imgEditProfile)
 
