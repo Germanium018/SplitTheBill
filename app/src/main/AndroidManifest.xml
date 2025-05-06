@@ -26,9 +26,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PrivacyActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddExpenseActivity"
             android:exported="false" />
         <activity
