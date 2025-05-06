@@ -14,16 +14,7 @@
         android:theme="@style/Theme.SplitTheBill"
         tools:targetApi="31">
         <activity
-            android:name=".NoteDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NoteAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".AddNotes"
-            android:exported="false" />
-        <activity
-            android:name=".util.AddNotes"
+            android:name=".NotificationActivity"
             android:exported="false" />
         <activity
             android:name=".SplitEqualActivity"

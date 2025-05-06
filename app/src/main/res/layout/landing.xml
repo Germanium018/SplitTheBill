@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    tools:ignore="UseAppTint"
     tools:context=".LandingActivity">
 
     <!-- Main Content -->
@@ -15,54 +16,7 @@
             android:padding="40dp"
             android:orientation="vertical">
 
-            <!-- User Greetings and Notification Bell -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:weightSum="2">
-
-                <ImageView
-                    android:id="@+id/imageview_user"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/user"
-                    android:layout_marginEnd="10dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hello,"
-                        android:fontFamily="@font/inter"
-                        android:textSize="16sp"
-                        android:textColor="#000000"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nina"
-                        android:fontFamily="@font/inter"
-                        android:textSize="14sp"
-                        android:textColor="#000000"/>
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageview_notification"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/bell"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="2"/>
-            </LinearLayout>
-
-            <!-- Total Balance Display -->
+            <!-- Greeting Card -->
             <LinearLayout
                 android:id="@+id/textview_card"
                 android:layout_width="match_parent"
@@ -121,7 +75,7 @@
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/navigation_bar"
         android:orientation="horizontal"
@@ -129,34 +83,38 @@
 
         <ImageView
             android:id="@+id/imageview_home"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
             android:src="@drawable/home"
+            android:tint="#FFFFFF"
             android:scaleType="fitCenter"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="30dp"/>
 
         <ImageView
             android:id="@+id/imageview_add"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
             android:src="@drawable/add"
+            android:tint="#FFFFFF"
             android:scaleType="fitCenter"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="30dp"/>
 
         <ImageView
             android:id="@+id/imageview_profile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/profile1"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:src="@drawable/profile"
+            android:tint="#FFFFFF"
             android:scaleType="fitCenter"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="30dp"/>
 
         <ImageView
             android:id="@+id/imageview_settings"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
             android:src="@drawable/settings"
             android:scaleType="fitCenter"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="30dp"
+            android:tint="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>

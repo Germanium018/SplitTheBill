@@ -20,7 +20,6 @@ class ProfilePage : Activity() {
 
         val btnSave = findViewById<Button>(R.id.btnSave)
         btnSave.setOnClickListener {
-            Log.e("Exit App", "Exiting App")
             Toast.makeText(this, "Button is clicked!", Toast.LENGTH_LONG).show()
             startActivity(Intent(this,LandingActivity::class.java))
             finish()

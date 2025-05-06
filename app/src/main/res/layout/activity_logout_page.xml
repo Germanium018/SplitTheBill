@@ -4,34 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp"
+    android:padding="40dp"
     android:background="#FFFFFF">
 
-
     <ImageView
-        android:layout_width="131dp"
-        android:layout_height="136dp"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
         android:src="@drawable/logout" />
 
-
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#F96D00"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#064789"
         android:padding="20dp"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-
+        android:gravity="center">
 
         <TextView
             android:id="@+id/logoutMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log out from Split the Bill?"
+            android:fontFamily="@font/inter"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textAlignment="center"
             android:layout_centerHorizontal="true"
-            android:paddingBottom="20dp"/>
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,6 +39,7 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_below="@id/logoutMessage"
+            android:padding="5dp"
             android:weightSum="2">
 
             <Button
@@ -47,16 +48,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancel"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"/>
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp"/>
 
             <Button
                 android:id="@+id/button_logout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_button"
                 android:text="Log out"
-                android:layout_marginTop="8dp"/>
+                android:fontFamily="@font/bold"
+                android:textColor="@color/white"
+                android:textAllCaps="false"/>
         </LinearLayout>
     </RelativeLayout>
+
 </LinearLayout>
