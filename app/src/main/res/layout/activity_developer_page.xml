@@ -10,8 +10,11 @@
         android:layout_height="wrap_content"
         android:text="MEET THE DEVELOPERS"
         android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_rectangle"
         android:textStyle="bold"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/inter"/>
 
     <ImageView
         android:layout_width="161dp"
@@ -21,22 +24,21 @@
         android:src="@drawable/mypicc" />
 
     <TextView
-        android:layout_width="267dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="50dp"
-        android:text="German Oliver E. Velasco IV
-        BSIT Student"
+        android:text="German Oliver E. Velasco IV"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background=""
+        android:layout_marginBottom="30dp"/>
 
     <TextView
-        android:layout_width="267dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="50dp"
-        android:text="I’m an Information Technology student passionate about building user-friendly applications."
-        android:textSize="15sp" />
+        android:text="Information Technology Student"
+
 
     <ImageView
         android:layout_width="160dp"
@@ -46,23 +48,15 @@
         android:src="@drawable/picc" />
 
     <TextView
-        android:layout_width="267dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="50dp"
         android:text="Niña Nicole S. Villadarez
-        BSIT Student"
+        Information Technology Student"
         android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="267dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="50dp"
-        android:text="I’m an Information Technology student with a focus on problem-solving and continuous learning in the world of software development."
-        android:textSize="15sp"
-        android:paddingBottom="5dp"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/btnHome"
@@ -71,6 +65,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_button"
         android:text="Home"
+        android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
