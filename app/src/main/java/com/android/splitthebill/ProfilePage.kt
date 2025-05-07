@@ -1,27 +1,56 @@
 package com.android.splitthebill
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.EditText
 import android.widget.Button
 import android.widget.Toast
-import android.graphics.Paint;
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.android.splitthebill.model.User
 
-class ProfilePage : Activity() {
+class ProfilePage : AppCompatActivity() {
+
+    private lateinit var etUsername: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var etConfirmPassword: EditText
+    private lateinit var btnSave: Button
+    private lateinit var btnHome: Button
+
+    private var currentUser: User = User("", "")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.profilepage)
 
-        val btnSave = findViewById<Button>(R.id.btnSave)
+        etUsername = findViewById(R.id.etUsername)
+        etPassword = findViewById(R.id.etPassword)
+        etConfirmPassword = findViewById(R.id.etConfirmPassword)
+        btnSave = findViewById(R.id.btnSave)
+        btnHome = findViewById(R.id.btnHome)
+
+        etUsername.setText(currentUser.username)
+        etPassword.setText(currentUser.password)
+
         btnSave.setOnClickListener {
-            Toast.makeText(this, "Button is clicked!", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this,LandingActivity::class.java))
+            val updatedUsername = etUsername.text.toString()
+            val updatedPassword = etPassword.text.toString()
+            val confirmedPassword = etConfirmPassword.text.toString()
+
+            if (updatedPassword == confirmedPassword) {
+                currentUser = User(username = updatedUsername, password = updatedPassword)
+                Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
+
+                etUsername.isEnabled = false
+                etPassword.isEnabled = false
+                etConfirmPassword.isEnabled = false
+            } else {
+                Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        btnHome.setOnClickListener {
+            val intent = Intent(this, LandingActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
